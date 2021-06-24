@@ -2,7 +2,15 @@ import NewMeeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetupsPage(props) {
   function addMeetupHandler(meetupData) {
-    //https://react-airbnb-31628-default-rtdb.firebaseio.com/
+    debugger;
+    fetch(
+      "https://react-airbnb-31628-default-rtdb.firebaseio.com/meetups.json",
+      {
+        method: "POST",
+        body: JSON.stringify(meetupData),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 
   return (
